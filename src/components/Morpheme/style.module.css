@@ -1,0 +1,56 @@
+.morphemes__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.morphemes__container_prefix {
+  color: #fff;
+}
+
+.morphemes__container_root {
+  color: #fff;
+}
+
+.morphemes__container_postfix {
+  color: #fff;
+}
+
+.morphemes__container_suffix {
+  color: #fff;
+}
+
+.morphemes__container_suffix .morphemes__graph {
+  position: relative;
+  top: 40px;
+}
+
+.morphemes__graph {
+  height: 40px;
+  text-align: center;
+}
+
+.morphemes__graph:hover {
+  cursor: pointer;
+}
+
+.letters__container {
+  color: #fff;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.letters__item {
+  margin: 0 5px;
+  position: relative;
+}
+
+.letters__item:hover {
+  cursor: pointer;
+  color: #6d2eff;
+}
+
+.morphemes__container_suffix:hover .letters__item {
+  color: #6d2eff;
+}

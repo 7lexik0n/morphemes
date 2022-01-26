@@ -1,0 +1,36 @@
+.morphemes__container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.morphemes__item {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 15%;
+}
+
+.morphemes__item_active {  
+  color: #879dff;
+}
+
+.morphemes__item:hover {
+  cursor: pointer;
+  color: #879dff;
+}
+
+.morphemes__title {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
