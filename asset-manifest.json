@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/morphemes/static/css/main.bf68a6db.css",
+    "main.js": "/morphemes/static/js/main.9048918a.js",
+    "index.html": "/morphemes/index.html",
+    "main.bf68a6db.css.map": "/morphemes/static/css/main.bf68a6db.css.map",
+    "main.9048918a.js.map": "/morphemes/static/js/main.9048918a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf68a6db.css",
+    "static/js/main.9048918a.js"
+  ]
+}
