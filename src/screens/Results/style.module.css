@@ -1,0 +1,26 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  color: #fff;
+}
+.main > div {
+  text-align: center;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+}
+.link:hover {
+  color: #879dff;
+}
+.title {
+  display: block;
+  text-align: center;
+}

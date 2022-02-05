@@ -1,0 +1,20 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  color: #fff;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.link:hover {
+  color: #879dff;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
@@ -9,7 +11,9 @@ import morphemesReducer from "./store/reducers/morphemesReducer";
 import progressReducer from "./store/reducers/progressReducer";
 
 import "./index.css";
-import App from "./App";
+import Main from "./screens/Main";
+import Home from "./screens/Home";
+import ResultsScreen from "./screens/Results";
 
 const rootReducer = combineReducers({
   wordReducer,
@@ -20,8 +24,14 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <Routes>
+        <Route path="results" element={<ResultsScreen />} />
+        <Route path="main" element={<Main />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

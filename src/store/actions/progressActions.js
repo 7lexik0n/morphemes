@@ -18,6 +18,7 @@ export const setCorrectStatus = () => ({
   type: SET_CORRECT_STATUS,
 });
 
-export const setWrongStatus = () => ({
+export const setWrongStatus = (word) => ({
   type: SET_WRONG_STATUS,
+  word,
 });

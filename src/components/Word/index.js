@@ -35,7 +35,8 @@ const Word = () => {
     );
 
     if (!result) {
-      dispatch(setWrongStatus());
+      const { currentWord } = progress;
+      dispatch(setWrongStatus(currentWord.word));
     } else {
       dispatch(setCorrectStatus());
     }

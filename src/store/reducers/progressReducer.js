@@ -15,6 +15,7 @@ const initialState = {
   words,
   wordsLength: words.length,
   finish: false,
+  mistakes: new Set(),
 };
 
 const progressReducer = (state = initialState, action) => {
@@ -33,6 +34,7 @@ const progressReducer = (state = initialState, action) => {
         status: null,
         wordsLength: words.length,
         finish: false,
+        mistakes: new Set(),
       };
     }
     case SET_WORD: {
@@ -55,10 +57,16 @@ const progressReducer = (state = initialState, action) => {
       };
     }
     case SET_WRONG_STATUS: {
+      const { word } = action;
+      const { mistakes } = state;
+      const newMistakes = new Set(mistakes);
+      newMistakes.add(word);
+
       return {
         ...state,
         attempts: state.attempts + 1,
         status: "wrong",
+        mistakes: newMistakes,
       };
     }
     default:

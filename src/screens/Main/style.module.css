@@ -1,0 +1,10 @@
+.link {
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.link:hover {
+  color: #879dff;
+}
