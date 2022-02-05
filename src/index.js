@@ -29,7 +29,7 @@ ReactDOM.render(
       <Routes>
         <Route path="results" element={<ResultsScreen />} />
         <Route path="main" element={<Main />} />
-        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Provider>
   </BrowserRouter>,
