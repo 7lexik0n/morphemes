@@ -15,7 +15,7 @@ const Results = () => {
 
   const restart = () => {
     dispatch(startProgress(progress.words[0]));
-    navigate("/main");
+    navigate("main");
   };
 
   let content = (
