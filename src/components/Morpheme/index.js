@@ -22,27 +22,32 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
 
   const classes = [styles.morphemes__container];
   let morphemeCanvas = <div className={styles.morphemes__graph}></div>;
+  
+  const windowWidth = window.innerWidth;
+  const height = windowWidth > 768 ? 50 : 20;
+  const suffixheight = windowWidth > 768 ? 75 : 25;
 
   useEffect(() => {
     setCanvasWidth(parseInt(getComputedStyle(lettersEl.current).width) - 10);
-  }, [morpheme]);
+  }, [morpheme, height, windowWidth]);
+
 
   switch (type) {
     case "prefix":
       classes.push(styles.morphemes__container_prefix);
-      morphemeCanvas = <Prefix width={canvasWidth} height={50} />;
+      morphemeCanvas = <Prefix width={canvasWidth} height={height} />;
       break;
     case "root":
       classes.push(styles.morphemes__container_root);
-      morphemeCanvas = <Root width={canvasWidth} height={50} />;
+      morphemeCanvas = <Root width={canvasWidth} height={height} />;
       break;
     case "postfix":
       classes.push(styles.morphemes__container_postfix);
-      morphemeCanvas = <Postfix width={canvasWidth} height={50} />;
+      morphemeCanvas = <Postfix width={canvasWidth} height={height} />;
       break;
     case "suffix":
       classes.push(styles.morphemes__container_suffix);
-      morphemeCanvas = <Suffix width={canvasWidth + 10} height={70} />;
+      morphemeCanvas = <Suffix width={canvasWidth + 10} height={suffixheight} />;
       break;
     default:
       break;

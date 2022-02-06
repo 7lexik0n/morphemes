@@ -30,6 +30,15 @@
   text-align: center;
 }
 
+@media(max-width: 768px) {
+  .morphemes__graph {
+    height: 25px;
+  }
+  .morphemes__container_suffix .morphemes__graph {
+    top: 25px;
+  }
+}
+
 .morphemes__graph:hover {
   cursor: pointer;
 }
@@ -44,6 +53,15 @@
 .letters__item {
   margin: 0 5px;
   position: relative;
+}
+
+@media(max-width:768px) {
+  .letters__container {
+    font-size: 22px;
+  }
+  .letters__item {
+    margin: 0 2px;
+  }
 }
 
 .letters__item:hover {

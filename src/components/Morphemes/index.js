@@ -28,7 +28,9 @@ const Morphemes = () => {
   const postfix = useRef(null);
   const suffix = useRef(null);
 
+  const windowWidth = window.innerWidth;
   const maxWidth = 120;
+  const height = windowWidth > 768 ? 50 : 40;
 
   useEffect(() => {
     setCanvasProps({
@@ -37,7 +39,7 @@ const Morphemes = () => {
       postfix: parseInt(getComputedStyle(postfix.current).width),
       suffix: parseInt(getComputedStyle(suffix.current).width),
     });
-  }, []);
+  }, [height, windowWidth]);
 
   return (
     <div className={styles.morphemes__container}>
@@ -58,7 +60,7 @@ const Morphemes = () => {
       >
         <Prefix
           width={canvasProps.prefix > maxWidth ? maxWidth : canvasProps.prefix}
-          height={50}
+          height={height}
           lineWidth={3}
           active={type === "prefix" || prefixFocus}
         />
@@ -81,7 +83,7 @@ const Morphemes = () => {
       >
         <Root
           width={canvasProps.root > maxWidth ? maxWidth : canvasProps.root}
-          height={50}
+          height={height}
           lineWidth={3}
           active={type === "root" || rootFocus}
         />
@@ -106,7 +108,7 @@ const Morphemes = () => {
           width={
             canvasProps.postfix > maxWidth ? maxWidth : canvasProps.postfix
           }
-          height={50}
+          height={height}
           lineWidth={3}
           active={type === "postfix" || postfixFocus}
         />
@@ -129,7 +131,7 @@ const Morphemes = () => {
       >
         <Suffix
           width={canvasProps.suffix > maxWidth ? maxWidth : canvasProps.suffix}
-          height={50}
+          height={height}
           lineWidth={3}
           active={type === "suffix" || suffixFocus}
         />
