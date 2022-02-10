@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/morphemes/static/css/main.3185d63b.css",
-    "main.js": "/morphemes/static/js/main.43ab1619.js",
+    "main.js": "/morphemes/static/js/main.454e063e.js",
     "index.html": "/morphemes/index.html",
     "main.3185d63b.css.map": "/morphemes/static/css/main.3185d63b.css.map",
-    "main.43ab1619.js.map": "/morphemes/static/js/main.43ab1619.js.map"
+    "main.454e063e.js.map": "/morphemes/static/js/main.454e063e.js.map"
   },
   "entrypoints": [
     "static/css/main.3185d63b.css",
-    "static/js/main.43ab1619.js"
+    "static/js/main.454e063e.js"
   ]
 }
