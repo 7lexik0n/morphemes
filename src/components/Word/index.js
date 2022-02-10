@@ -15,6 +15,7 @@ const Word = () => {
 
   const word = useSelector((state) => state.wordReducer);
   const progress = useSelector((state) => state.progressReducer);
+  const morphemesState = useSelector((state) => state.morphemesReducer);
 
   useLayoutEffect(() => {
     if (!progress.currentWord) {

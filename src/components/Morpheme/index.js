@@ -12,9 +12,11 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
   const [canvasWidth, setCanvasWidth] = useState(0);
   const lettersEl = useRef(null);
 
-  const { type: morphemeType, selecting, startSelect } = useSelector(
-    (state) => state.morphemesReducer
-  );
+  const {
+    type: morphemeType,
+    selecting,
+    startSelect,
+  } = useSelector((state) => state.morphemesReducer);
   const dispatch = useDispatch();
 
   const { type } = morpheme;
@@ -22,7 +24,7 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
 
   const classes = [styles.morphemes__container];
   let morphemeCanvas = <div className={styles.morphemes__graph}></div>;
-  
+
   const windowWidth = window.innerWidth;
   const height = windowWidth > 768 ? 50 : 20;
   const suffixheight = windowWidth > 768 ? 75 : 25;
@@ -30,7 +32,6 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
   useEffect(() => {
     setCanvasWidth(parseInt(getComputedStyle(lettersEl.current).width) - 10);
   }, [morpheme, height, windowWidth]);
-
 
   switch (type) {
     case "prefix":
@@ -47,7 +48,9 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
       break;
     case "suffix":
       classes.push(styles.morphemes__container_suffix);
-      morphemeCanvas = <Suffix width={canvasWidth + 10} height={suffixheight} />;
+      morphemeCanvas = (
+        <Suffix width={canvasWidth + 10} height={suffixheight} />
+      );
       break;
     default:
       break;
@@ -58,7 +61,9 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
       dispatch(initSelect(morphemeIndex, letterIndex));
     }
     if (morphemeType && selecting) {
-      dispatch(finishSelect(morphemeIndex, letterIndex, startSelect, morphemeType));
+      dispatch(
+        finishSelect(morphemeIndex, letterIndex, startSelect, morphemeType)
+      );
     }
   };
 
@@ -67,7 +72,9 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
       <div
         className={styles.morphemes__graph}
         onClick={() => {
-          dispatch(removeMorpheme(morphemeIndex));
+          if (!selecting) {
+            dispatch(removeMorpheme(morphemeIndex));
+          }
         }}
       >
         {morphemeCanvas}
@@ -77,7 +84,9 @@ const Morpheme = ({ morpheme, index: morphemeIndex }) => {
           <span
             className={styles.letters__item}
             key={index}
-            onClick={() => onLetterClickHandler(morphemeIndex, index)}
+            onClick={() => {
+              onLetterClickHandler(morphemeIndex, index);
+            }}
           >
             {letter}
           </span>

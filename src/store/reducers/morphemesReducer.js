@@ -36,9 +36,10 @@ const morphemesReducer = (state = initialState, action) => {
       };
     }
     case FINISH_SELECT: {
-      const { morphemeIndex, letterIndex } = payload;
+      const { morphemeType } = payload;
+      
       return {
-        type: null,
+        type: morphemeType,
         selecting: false,
         startSelect: {
           morphemeIndex: 0,

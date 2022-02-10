@@ -45,6 +45,12 @@ const wordReducer = (state = initialState, action) => {
       if (morphemeId === 0) {
         const newState = [...state];
 
+        if (state.length === 1) {
+          newState[0].type = "";
+
+          return newState;
+        }
+
         if (isDefaultType(state, morphemeId + 1)) {
           newState.splice(morphemeId + 1, 1);
           newState[morphemeId] = {
@@ -127,6 +133,7 @@ const wordReducer = (state = initialState, action) => {
     }
     case FINISH_SELECT: {
       const { morphemeType } = payload;
+      
       let {
         morphemeIndex,
         letterIndex,
