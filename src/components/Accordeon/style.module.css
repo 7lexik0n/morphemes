@@ -1,0 +1,23 @@
+.accorderonItem {
+  border: 1px solid #fff;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 400px;
+}
+.accorderonItem:last-of-type {
+  margin-bottom: 25px;
+}
+.accorderonItem:hover {
+  background: #fff;
+  color: royalblue;
+}
+.accorderonItem__title {
+  margin: 0;
+}
+.accorderonItem__answer {
+  margin: 0;
+  margin-top: 5px;
+}

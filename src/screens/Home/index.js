@@ -31,6 +31,9 @@ const Home = () => {
         <Link to="/results" className={styles.link}>
           Результаты
         </Link>
+        <Link to="/help" className={styles.link}>
+          Помощь
+        </Link>
       </div>
     </div>
   );

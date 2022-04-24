@@ -13,6 +13,7 @@ import progressReducer from "./store/reducers/progressReducer";
 import "./index.css";
 import Main from "./screens/Main";
 import Home from "./screens/Home";
+import Help from "./screens/Help";
 import ResultsScreen from "./screens/Results";
 
 const rootReducer = combineReducers({
@@ -29,6 +30,7 @@ ReactDOM.render(
       <Routes>
         <Route path="results" element={<ResultsScreen />} />
         <Route path="main" element={<Main />} />
+        <Route path="help" element={<Help />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Provider>
