@@ -4,3 +4,7 @@ WEB-Приложение для проверки морфемного разбо
 
 
 ![Preview](https://i.ibb.co/1fV1mgY/b34d9fcc06.jpg "Preview")
+
+## Использованные технологии
+
+* [React](https://reactjs.org/)
